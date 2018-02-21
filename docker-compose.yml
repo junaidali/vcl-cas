@@ -36,5 +36,19 @@ services:
     volumes:
       - /var/log/vcl/
 
+  ldap:
+    image: osixia/openldap
+    env_file: .env
+    domainname: vcl.local
+    hostname: ldap
+
+  cas:
+    image: apereo/cas:v5.2.2
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+    domainname: vcl.local
+    hostname: cas
+
 volumes:
   mariadb_data:
