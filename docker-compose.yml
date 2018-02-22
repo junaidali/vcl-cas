@@ -10,7 +10,7 @@ services:
     hostname: db
 
   www:
-    build: www
+    image: junaidali/vcl-www
     env_file: .env
     volumes:
       - /var/log/apache2
@@ -25,7 +25,7 @@ services:
     hostname: www
 
   managementnode:
-    build: mgmt
+    image: junaidali/vcl-mgmt
     env_file: .env
     domainname: vcl.local
     hostname: mgmt
