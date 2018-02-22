@@ -10,7 +10,7 @@ services:
     hostname: db
 
   www:
-    image: junaidali/vcl-www
+    image: junaid/vcl-www
     env_file: .env
     volumes:
       - /var/log/apache2
@@ -25,7 +25,7 @@ services:
     hostname: www
 
   managementnode:
-    image: junaidali/vcl-mgmt
+    image: junaid/vcl-mgmt
     env_file: .env
     domainname: vcl.local
     hostname: mgmt
@@ -43,7 +43,8 @@ services:
     hostname: ldap
 
   cas:
-    image: apereo/cas:v5.2.2
+    build: cas
+    env_file: .env
     ports:
       - "8080:8080"
       - "8443:8443"
