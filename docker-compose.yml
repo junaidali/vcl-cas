@@ -37,10 +37,11 @@ services:
       - /var/log/vcl/
 
   ldap:
-    image: osixia/openldap
-    env_file: .env
+    image: jtgasper3/389ds-basic
     domainname: vcl.local
     hostname: ldap
+    ports:
+      - "10389:389"
 
   cas:
     build: cas
