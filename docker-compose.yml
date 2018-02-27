@@ -37,7 +37,7 @@ services:
       - /var/log/vcl/
 
   ldap:
-    image: jtgasper3/389ds-basic
+    image: jtgasper3/openldap-basic
     domainname: vcl.local
     hostname: ldap
     ports:
