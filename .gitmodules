@@ -1,3 +1,4 @@
 [submodule "cas"]
 	path = cas
 	url = git@github.com:junaidali/cas-webapp-docker.git
+	branch = master
